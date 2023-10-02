@@ -58,6 +58,12 @@ const searchMovies = (e) => {
   fetchMovies(searchKey);
 };
 
+// Función para seleccionar una película de la lista y actualizar el trailer
+const selectMovie = (selectedMovie) => {
+  setMovie(selectedMovie);
+  fetchMovie(selectedMovie.id);
+};
+
 // Efecto para cargar películas al inicio
 useEffect(() => {
   fetchMovies();
@@ -65,13 +71,13 @@ useEffect(() => {
 
   return (
     <div>
-      <h2 className='text-center mt-5 mb-5'>Films Fanatic</h2>
+      <h2 className='main-title text-center mt-5 mb-5'>Films Fanatic</h2>
 
       <SearchForm searchMovies={searchMovies} setSearchKey={setSearchKey} />
 
       <MovieDisplay movie={movie} trailer={trailer} playing={playing} setPlaying={setPlaying} />
 
-      <MovieList movies={movies} selectMovie={setMovie} URL_IMAGE={URL_IMAGE} />
+      <MovieList movies={movies} selectMovie={selectMovie} URL_IMAGE={URL_IMAGE} />
     </div>
   );
 }
