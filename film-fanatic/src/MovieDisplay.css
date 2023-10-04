@@ -1,0 +1,13 @@
+/* Estilo para el contenedor principal */
+.viewtrailer {
+    min-height: 100px;
+    background-size: cover;
+    background-position:center;
+    display: flex;
+    align-items: flex-start;
+}  
+.reproductor{
+    width: 100%;
+    height: 200px;
+  }
+  

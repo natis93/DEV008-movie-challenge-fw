@@ -16,6 +16,7 @@ function App() {
   const [movie, setMovie] = useState({ title: "Loading Movies" });
   const [playing, setPlaying] = useState(false);
 
+  
 // Función para realizar la petición GET a la API
 const fetchMovies = async (searchKey) => {
   const type = searchKey ? "search" : "discover";
@@ -41,7 +42,7 @@ const fetchMovie = async (id) => {
   const { data } = await axios.get(`${API_URL}/movie/${id}`, {
     params: {
       api_key: API_KEY,
-      append_to_response: "videos",
+      append_to_response: "videos,release_dates,director",
     },
   });
 
@@ -59,9 +60,16 @@ const searchMovies = (e) => {
 };
 
 // Función para seleccionar una película de la lista y actualizar el trailer
-const selectMovie = (selectedMovie) => {
+const selectMovie = async(selectedMovie) => {
   setMovie(selectedMovie);
-  fetchMovie(selectedMovie.id);
+  await fetchMovie(selectedMovie.id);
+
+  // Desplazar la página hacia el elemento con el id "trailer"
+  const trailerElement = document.getElementById("trailer");
+  if (trailerElement) {
+    trailerElement.scrollIntoView({ behavior: "smooth" });
+  }
+
 };
 
 // Efecto para cargar películas al inicio

@@ -29,13 +29,14 @@
   cursor: pointer;
 }
 
-.viewtrailer{
-  min-height: 700px;
-  background-size: cover;
-  background-position:center;
+.cast-list {
   display: flex;
-  align-items: flex-end;
- 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cast-list li {
+  margin-right: 10px; /* Ajusta el valor según la separación deseada */
 }
 .boton{
   background-color: #0F1014;
@@ -46,10 +47,6 @@
   cursor: pointer;
   margin-bottom: 10px;
   border-radius: 0.2rem;
-}
-.reproductor{
-  width: 100%;
-  height: 695px;
 }
 
 /* Establece la escala y la rotación en 3D al pasar el mouse */
