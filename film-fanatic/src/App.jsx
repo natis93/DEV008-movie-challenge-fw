@@ -4,7 +4,7 @@ import './App.css';
 import SearchForm from './SearchForm';
 import MovieDisplay from './MovieDisplay';
 import MovieList from './MovieList';
-
+import logofilm from './picture/logo.png';
 function App() {
   const API_URL = 'https://api.themoviedb.org/3';
   const API_KEY = '2bd456ad98108f462fb8a13051a5b0f2';
@@ -79,7 +79,11 @@ useEffect(() => {
 
   return (
     <div>
-      <h2 className='main-title text-center mt-5 mb-5'>Films Fanatic</h2>
+      <div className="logo-container">
+  <img src={logofilm} alt="Logo" className="logo-image" />
+  <div className="film-fanatic-text">Films Fanatic</div>
+</div>
+    
 
       <SearchForm searchMovies={searchMovies} setSearchKey={setSearchKey} />
 

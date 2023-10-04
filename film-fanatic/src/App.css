@@ -1,9 +1,19 @@
-.main-title {
-  font-size: 36px; 
-  color:#cbaa06 ;
-  margin-top: 2rem; 
-  margin-bottom: 89rem; 
-  
+.logo-container {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Dos columnas, una para el logo y otra para el texto */
+  align-items: center; /* Centra verticalmente */
+  gap: 20px; /* Espacio entre el logo y el texto */
+}
+.logo-image {
+  width: 100px;
+  height: auto;
+}
+
+.film-fanatic-text {
+  font-size: 40px;
+  color: #cbaa06;
+  margin-top: 32px;
+  margin-left: -0.5rem;
 }
 
 
@@ -68,12 +78,20 @@
     margin-bottom: 1rem; /* Margen inferior más pequeño para pantallas pequeñas */
     /* Otros estilos para pantallas pequeñas */
   }
+  .logo-container {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+  }
+
+  .film-fanatic-text {
+    font-size: 24px; /* Reducir el tamaño del texto en pantallas pequeñas */
+    margin-top: 10px; /* Agregar margen superior en pantallas pequeñas */
+  }
 }
 @media (min-width: 1400px)
  {
   
  }
  
-
+ 
 
 
